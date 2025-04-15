@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="admin_etusivu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalapankki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalapankki_lisää_lisääkalanäkymä.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalapankki_muokkaa_kalanakyma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalapankki_muokkaa_muokkaakala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalapankki_poista_kalanakyma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalapankki_poista_poistakala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalastuspaikat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalastuspaikat_lisää_kalastuspaikka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalastuspaikat_muokkaa_kalastuspaikka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalastuspaikat_muokkaa_muokkaakalastuspaikka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalastuspaikat_poista_kalastuspaikka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_kalastuspaikat_poista_poistakalastuspaikka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_käyttäjähallinta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_käyttäjähallinta_lisää_käyttäjä.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_käyttäjähallinta_muokkaa_käyttäjä.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_käyttäjähallinta_muokkaa_muokkaakäyttäjä.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_käyttäjähallinta_poista_käyttäjä.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="admin_käyttäjähallinta_poista_poistakäyttäjä.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_saaliskortti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_saaliskorttipoista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_tarkastelekalalaji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_tarkastelekalastuspaikka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kirjaudu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_etusivu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_kalapankki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_kalastuspaikat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_kirjaasaalis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_luouusikayttaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_omatsaaliit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_poistasaalis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_tarkastelesaalis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="kayttaja_unohtunutsalasana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

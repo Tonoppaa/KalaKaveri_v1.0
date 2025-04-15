@@ -1,0 +1,38 @@
+4.4.2025 11.16.38: Päivitit saaliin (Sorva, pyydetty: Tampere - Tohloppi).
+
+4.4.2025 11.17.45: Lisäsit saaliin (Hauki, pyydetty: Tampere - Kaukajärvi).
+
+4.4.2025 11.21.15: Poistit saaliin (Hauki, pyydetty: Tampere - Kaukajärvi).
+
+4.4.2025 12.05.36: Lisäsit saaliin (Hauki, pyydetty: Tampere - Kaukajärvi).
+
+4.4.2025 12.06.07: Päivitit saaliin (Hauki, pyydetty: Tampere - Tohloppi).
+
+4.4.2025 12.06.27: Poistit saaliin (Hauki, pyydetty: Tampere - Tohloppi).
+
+4.4.2025 12.26.23: Päivitit saaliin (Sorva, pyydetty: Tampere - Tohloppi).
+
+4.4.2025 22.05.50: Lisäsit saaliin (Hauki, pyydetty: Tampere - Tohloppi).
+
+10.4.2025 9.24.39: Lisäsit saaliin (Särki, pyydetty: Tampere - Särkijärvi).
+
+10.4.2025 9.25.16: Päivitit saaliin (Särki, pyydetty: Tampere - Särkijärvi).
+
+10.4.2025 9.25.46: Poistit saaliin (Särki, pyydetty: Tampere - Särkijärvi).
+
+10.4.2025 15.39.28: Lisäsit saaliin (Särki, pyydetty: Hämeenlinna - Ahvenisto).
+
+11.4.2025 0.39.32: Poistit saaliin (Särki, pyydetty: Hämeenlinna - Ahvenisto).
+
+14.4.2025 17.36.58: Lisäsit saaliin (Särki, pyydetty: Hämeenlinna - Ahvenistonjärvi).
+
+14.4.2025 17.37.40: Päivitit saaliin (Särki, pyydetty: Hämeenlinna - Ahvenistonjärvi).
+
+14.4.2025 17.38.05: Poistit saaliin (Särki, pyydetty: Hämeenlinna - Ahvenistonjärvi).
+
+14.4.2025 22.11.29: Päivitit saaliin (Hauki, pyydetty: Tampere - Tesomajärvi).
+
+14.4.2025 22.12.57: Päivitit saaliin (Hauki, pyydetty: Tampere - Tesomajärvi).
+
+14.4.2025 22.15.53: Päivitit saaliin (Hauki, pyydetty: Tampere - Tesomajärvi).
+

@@ -1,0 +1,236 @@
+7.4.2025 0.36.14: Päivitit kalapankin kalan (Ahven) tietoja.
+
+7.4.2025 11.09.05: Poistit kalastuspaikan (Tampere - Vaakkolammi, ID: TAMPERE010) tietokannasta.
+
+7.4.2025 12.10.30: Muokkasit kalastuspaikan tietoja (Tampere - Peltolammi, ID: TAMPERE009) tietokannasta.
+
+7.4.2025 12.15.17: Muokkasit kalastuspaikan tietoja (Tampere - Peltolammi, ID: TAMPERE009) .
+
+7.4.2025 12.27.14: Muokkasit kalastuspaikan tietoja (Tampere - Peltolammi, ID: TAMPERE009) .
+
+7.4.2025 14.20.30: Lisäsit uuden kalalajin järjestelmään (Kuore, ID: KALA000020).
+
+7.4.2025 22.45.55: Poistit kalapankin kalan (Kuore) tietokannasta.
+
+7.4.2025 22.47.18: Lisäsit uuden kalalajin järjestelmään (Kuore, ID: KALA000020).
+
+8.4.2025 9.43.57: Lisäsit uuden kalastuspaikan (Tampere - Vaakkolammi, ID: TAMPERE009) .
+
+8.4.2025 9.45.28: Muokkasit kalastuspaikan tietoja (Tampere - Vaakkolammi, ID: TAMPERE010) .
+
+8.4.2025 10.22.50: Lisäsit uuden kalastuspaikan (Oulu - Hartaanselkä, ID: OULU000001) .
+
+8.4.2025 10.24.04: Muokkasit kalastuspaikan tietoja (Oulu - Hartaanselkä, ID: OULU000001) .
+
+8.4.2025 10.24.26: Poistit kalastuspaikan (Oulu - Hartaanselkä, ID: OULU000001) tietokannasta.
+
+8.4.2025 10.27.01: Poistit kalastuspaikan (Tampere - Vaakkolammi, ID: TAMPERE010) tietokannasta.
+
+8.4.2025 10.30.21: Lisäsit uuden kalastuspaikan (Tampere - Vaakkolammi, ID: TAMPERE010) .
+
+8.4.2025 10.33.25: Lisäsit uuden kalastuspaikan (Oulu - Hartaanselkä, ID: OULU000001) .
+
+8.4.2025 10.33.36: Poistit kalastuspaikan (Oulu - Hartaanselkä, ID: OULU000001) tietokannasta.
+
+8.4.2025 10.34.21: Poistit kalastuspaikan (Tampere - Vaakkolammi, ID: TAMPERE010) tietokannasta.
+
+8.4.2025 10.35.42: Lisäsit uuden kalastuspaikan (Tampere - Vaakkolammi, ID: TAMPERE010) .
+
+8.4.2025 10.36.06: Muokkasit kalastuspaikan tietoja (Tampere - Vaakkolammi, ID: TAMPERE010) .
+
+8.4.2025 10.36.57: Lisäsit uuden kalastuspaikan (Oulu - Hartaanselkä, ID: OULU000001) .
+
+8.4.2025 10.37.20: Poistit kalastuspaikan (Oulu - Hartaanselkä, ID: OULU000001) tietokannasta.
+
+8.4.2025 11.02.58: Lisäsit uuden kalastuspaikan (Oulu - Hartaanselkä, ID: OULU000001) .
+
+8.4.2025 11.03.42: Lisäsit uuden kalastuspaikan (Oulu - Toppilansalmi, ID: OULU000002) .
+
+8.4.2025 14.18.02: Poistit käyttäjän (Tommi Tabermann, ID: USER00000003) tietokannasta.
+
+9.4.2025 11.31.37: Lisäsit uuden käyttäjän järjestelmään (Benito Mussolini, ID: USER00000004).
+
+9.4.2025 11.36.53: Lisäsit uuden käyttäjän järjestelmään (Barack Obama, ID: USER00000005).
+
+9.4.2025 13.10.31: Lisäsit uuden kalalajin järjestelmään (Ankerias, ID: KALA000021).
+
+9.4.2025 13.10.50: Poistit kalapankin kalan (Ankerias) tietokannasta.
+
+9.4.2025 13.11.28: Lisäsit uuden kalalajin järjestelmään (Ankerias, ID: KALA000021).
+
+9.4.2025 13.15.22: Päivitit kalapankin kalan (Ankerias) tietoja.
+
+9.4.2025 13.19.23: Poistit kalapankin kalan (Ankerias) tietokannasta.
+
+9.4.2025 13.21.27: Lisäsit uuden kalalajin järjestelmään (Ankerias, ID: KALA000021).
+
+9.4.2025 13.22.15: Poistit kalapankin kalan (Ankerias) tietokannasta.
+
+9.4.2025 13.22.28: Lisäsit uuden kalalajin järjestelmään (ffrf, ID: KALA000021).
+
+9.4.2025 13.22.35: Poistit kalapankin kalan (ffrf) tietokannasta.
+
+9.4.2025 14.24.44: Päivitit käyttäjän (Barack Obama, ID: USER00000005) tietoja.
+
+9.4.2025 14.27.01: Lisäsit uuden kalalajin järjestelmään (Ankerias, ID: KALA000021).
+
+9.4.2025 14.27.33: Päivitit kalapankin kalan (Ankerias) tietoja.
+
+9.4.2025 14.27.56: Poistit kalapankin kalan (Ankerias) tietokannasta.
+
+9.4.2025 14.28.39: Poistit kalastuspaikan (Oulu - Toppilansalmi, ID: OULU000002) tietokannasta.
+
+9.4.2025 14.29.29: Lisäsit uuden kalastuspaikan (Oulu - Toppilansalmi, ID: OULU000002) .
+
+9.4.2025 14.30.08: Muokkasit kalastuspaikan tietoja (Oulu - Toppilansalmi, ID: OULU000002) .
+
+9.4.2025 14.32.16: Lisäsit uuden käyttäjän järjestelmään (Tommi Testaaja, ID: USER00000006).
+
+9.4.2025 14.36.07: Lisäsit uuden kalalajin järjestelmään (Ankerias, ID: KALA000021).
+
+9.4.2025 14.36.44: Päivitit kalapankin kalan (Ankerias) tietoja.
+
+9.4.2025 14.37.10: Poistit kalapankin kalan (Ankerias) tietokannasta.
+
+9.4.2025 14.38.11: Poistit kalastuspaikan (Oulu - Toppilansalmi, ID: OULU000002) tietokannasta.
+
+9.4.2025 14.39.00: Lisäsit uuden kalastuspaikan (Oulu - Toppilansalmi, ID: OULU000002) .
+
+9.4.2025 14.39.25: Muokkasit kalastuspaikan tietoja (Oulu - Toppilansalmi, ID: OULU000002) .
+
+9.4.2025 14.41.19: Poistit käyttäjän (Tommi Testaaja, ID: USER00000006) tietokannasta.
+
+9.4.2025 14.42.18: Lisäsit uuden käyttäjän järjestelmään (Tommi Tabermann, ID: USER00000006).
+
+10.4.2025 14.04.02: Lisäsit uuden kalastuspaikan (Hämeenlinna - Ahvenisto, ID: HÄMEENL001) .
+
+10.4.2025 14.13.19: Poistit kalastuspaikan (Hämeenlinna - Ahvenisto, ID: HÄMEENL001) tietokannasta.
+
+10.4.2025 14.13.39: Lisäsit uuden kalastuspaikan (Hämeenlinna - Ahvenisto, ID: HÄMEENL001) .
+
+10.4.2025 14.16.10: Poistit kalastuspaikan (Hämeenlinna - Ahvenisto, ID: HÄMEENL001) tietokannasta.
+
+10.4.2025 14.16.48: Lisäsit uuden kalastuspaikan (Hämeenlinna - Aulanko, ID: HÄMEENL001) .
+
+10.4.2025 14.18.23: Poistit kalastuspaikan (Hämeenlinna - Aulanko, ID: HÄMEENL001) tietokannasta.
+
+10.4.2025 14.18.52: Lisäsit uuden kalastuspaikan (Hämeenlinna - Vanaja, ID: HÄMEENL001) .
+
+10.4.2025 14.24.16: Poistit kalastuspaikan (Hämeenlinna - Vanaja, ID: HÄMEENL001) tietokannasta.
+
+10.4.2025 14.24.42: Lisäsit uuden kalastuspaikan (Hämeenlinna - Kahtoilampi, ID: HÄMEENL001) .
+
+10.4.2025 14.30.06: Poistit kalastuspaikan (Hämeenlinna - Kahtoilampi, ID: HÄMEENL001) tietokannasta.
+
+10.4.2025 14.30.23: Lisäsit uuden kalastuspaikan (Hämeenlinna - Appara, ID: HÄMEENL001) .
+
+10.4.2025 14.30.46: Poistit kalastuspaikan (Hämeenlinna - Appara, ID: HÄMEENL001) tietokannasta.
+
+10.4.2025 14.34.01: Lisäsit uuden kalastuspaikan (Hämeenlinna - Ahvenisto, ID: HÄMEENL001) .
+
+14.4.2025 11.46.30: Muokkasit kalastuspaikan tietoja (Tampere - Hervantajärvi, ID: TAMPERE004) .
+
+14.4.2025 11.48.08: Muokkasit kalastuspaikan tietoja (Tampere - Särkijärvi, ID: TAMPERE005) .
+
+14.4.2025 11.48.55: Muokkasit kalastuspaikan tietoja (Tampere - Särkijärvi, ID: TAMPERE005) .
+
+14.4.2025 11.49.35: Muokkasit kalastuspaikan tietoja (Tampere - Särkijärvi, ID: TAMPERE005) .
+
+14.4.2025 13.40.02: Päivitit käyttäjän (Tommi Testaaja, ID: USER00000007) tietoja.
+
+14.4.2025 14.25.18: Poistit käyttäjän (sasasddsd asdasd, ID: USER00000009) tietokannasta.
+
+14.4.2025 14.28.11: Poistit käyttäjän (dofjfddsjöf kdsjfösldkfdjöf, ID: USER00000009) tietokannasta.
+
+14.4.2025 14.36.44: Lisäsit uuden kalalajin järjestelmään (Kampela, ID: KALA000021).
+
+14.4.2025 14.44.10: Lisäsit uuden kalalajin järjestelmään (Kampela, ID: KALA000022).
+
+14.4.2025 14.44.52: Poistit kalapankin kalan (Kampela) tietokannasta.
+
+14.4.2025 14.44.57: Poistit kalapankin kalan (Kampela) tietokannasta.
+
+14.4.2025 14.46.08: Lisäsit uuden kalalajin järjestelmään (Kampela, ID: KALA000021).
+
+14.4.2025 14.46.34: Päivitit kalapankin kalan (Kampela) tietoja.
+
+14.4.2025 14.46.58: Poistit kalapankin kalan (Kampela) tietokannasta.
+
+14.4.2025 14.47.34: Poistit kalastuspaikan (Hämeenlinna - Ahvenisto, ID: HÄMEENL001) tietokannasta.
+
+14.4.2025 14.48.34: Lisäsit uuden kalastuspaikan (Hämeenlinna - Ahvenisto, ID: HÄMEENL001) .
+
+14.4.2025 14.53.46: Lisäsit uuden kalalajin järjestelmään (Kampela, ID: KALA000021).
+
+14.4.2025 14.54.10: Päivitit kalapankin kalan (Kampela) tietoja.
+
+14.4.2025 14.54.26: Poistit kalapankin kalan (Kampela) tietokannasta.
+
+14.4.2025 14.55.14: Lisäsit uuden kalastuspaikan (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL002) .
+
+14.4.2025 14.55.53: Muokkasit kalastuspaikan tietoja (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL002) .
+
+14.4.2025 14.56.17: Poistit kalastuspaikan (Hämeenlinna - Ahvenisto, ID: HÄMEENL001) tietokannasta.
+
+14.4.2025 17.25.47: Lisäsit uuden kalalajin järjestelmään (Kampela, ID: KALA000021).
+
+14.4.2025 17.26.14: Päivitit kalapankin kalan (Kampela) tietoja.
+
+14.4.2025 17.26.34: Poistit kalapankin kalan (Kampela) tietokannasta.
+
+14.4.2025 17.26.58: Poistit kalastuspaikan (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL002) tietokannasta.
+
+14.4.2025 17.27.46: Lisäsit uuden kalastuspaikan (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) .
+
+14.4.2025 17.28.31: Muokkasit kalastuspaikan tietoja (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) .
+
+14.4.2025 17.30.04: Lisäsit uuden käyttäjän järjestelmään (Marko Mallikas, ID: USER00000009).
+
+14.4.2025 17.30.40: Päivitit käyttäjän (Marko Mallikas, ID: USER00000009) tietoja.
+
+14.4.2025 17.32.12: Poistit käyttäjän (Marko Mallikas, ID: USER00000009) tietokannasta.
+
+14.4.2025 22.58.25: Päivitit kalapankin kalan (Made) tietoja.
+
+14.4.2025 23.12.40: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.14.10: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.14.41: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.15.01: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.15.33: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.19.09: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.19.55: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.20.14: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.20.31: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.28.19: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.28.42: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.28.53: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.29.12: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.35.07: Muokkasit kalastuspaikan tietoja (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) .
+
+14.4.2025 23.35.24: Muokkasit kalastuspaikan tietoja (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) .
+
+14.4.2025 23.36.15: Muokkasit kalastuspaikan tietoja (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) .
+
+14.4.2025 23.38.42: Muokkasit kalastuspaikan tietoja (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) .
+
+14.4.2025 23.39.02: Muokkasit kalastuspaikan tietoja (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) .
+
+14.4.2025 23.39.20: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.39.40: Päivitit kalapankin kalan (Kuore) tietoja.
+
+14.4.2025 23.49.39: Lisäsit uuden käyttäjän järjestelmään (Master Miller, ID: ADMIN0000002).
+

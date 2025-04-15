@@ -1,0 +1,275 @@
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace KalaKaveri_v1
+{
+    public partial class admin_käyttäjähallinta_lisää_käyttäjä : Form
+    {
+        string userID;
+        MySqlConnection yhteys;
+        public admin_käyttäjähallinta_lisää_käyttäjä(MySqlConnection yhteysOlio, string uID)
+        {
+            InitializeComponent();
+            userID = uID;
+            yhteys = yhteysOlio;
+            LataaRoolit(); // Lataa roolit tietokannasta roolicomboBoxiin
+            näytäSalasanaButton.MouseDown += new MouseEventHandler(näytäSalasanaButton_MouseDown); // Tapahtumakäsittelijä, kun salasana halutaan nähdä nappia painamalla
+            näytäSalasanaButton.MouseUp += new MouseEventHandler(näytäSalasanaButton_MouseUp); // Tapahtumakäsittelijä, kun salasana halutaan piilottaa nappia painamalla
+        }
+
+        private void suljeNappi_Click(object sender, EventArgs e) // Sulkee tämän formin, avaa edellisen formin (käyttäjähallinta)
+        {
+            this.Close();
+            admin_käyttäjähallinta adminKäyttäjähallinta = new admin_käyttäjähallinta(yhteys, userID);
+            adminKäyttäjähallinta.Show();
+        }
+
+        private void näytäSalasanaButton_MouseDown(object sender, EventArgs e) // Näytä salasana, kun nappia pidetään pohjassa
+        {
+            salasanatextBox.UseSystemPasswordChar = false;
+        }
+
+        private void näytäSalasanaButton_MouseUp(object sender, EventArgs e) // Piilota salasana, kun nappia ei paineta
+        {
+            salasanatextBox.UseSystemPasswordChar = true;
+        }
+
+        private void generoiSalasanabutton_Click(object sender, EventArgs e) // Luodaan satunnainen salasana, väh. 8, max. 20 merkkiä pitkä
+        {
+            salasanatextBox.Clear(); // Tyhjennetään salasanateksikenttä ennen uuden salasanan luomista
+            List<char> merkit = new List<char>()
+            {
+                'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+                'å','ä','ö',
+
+                'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+                'Å','Ä','Ö',
+
+                '0','1','2','3','4','5','6','7','8','9',
+
+                '!','@','#','$','%','&','*'
+            };
+            Random salasanaGeneroija = new Random();
+            string salasana = "";
+            int pituus = salasanaGeneroija.Next(8, 21); // Salasanan pituus väh. 8 merkkiä, mutta max. 20 merkkiä pitkä
+
+
+            for (int i = 0; i < pituus; i++)
+            {
+                int satunnainenIndeksi = salasanaGeneroija.Next(merkit.Count); // Valitaan satunnainen merkki listasta
+                salasana += merkit[satunnainenIndeksi]; // Lisätään merkkejä salasana-muuttujaan
+            }
+            salasanatextBox.Text = salasana;
+        }
+
+        private void LataaRoolit() // Lataa käyttäjien roolit tietokannasta comboBoxiin
+        {
+            try
+            {
+                yhteys.Open();
+                {
+                    string haeRoolit = "SELECT DISTINCT rooli FROM kayttaja";
+                    MySqlCommand haeRoolitKomento = new MySqlCommand(haeRoolit, yhteys);
+                    MySqlDataReader roolitLukija = haeRoolitKomento.ExecuteReader();
+                    while (roolitLukija.Read())
+                    {
+                        string rooli = roolitLukija["rooli"].ToString();
+                        roolicomboBox.Items.Add(rooli);
+                    }
+                    roolitLukija.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Virhe roolien lataamisessa: " + ex.Message);
+            }
+            finally
+            {
+                yhteys.Close();
+            }
+        }
+
+        private void lisääKäyttäjäbutton_Click(object sender, EventArgs e) // Lisää uusi käyttäjä tietokantaan
+        {
+            try
+            {
+                DialogResult vahvistus = MessageBox.Show("Haluatko varmasti lisätä kyseisen käyttäjän?", "Vahvista", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (vahvistus == DialogResult.Yes)
+                {
+                    // Tarkistetaan, onko jokin kenttä tyhjä
+                    if (string.IsNullOrWhiteSpace(etunimitextBox.Text) || string.IsNullOrWhiteSpace(sukunimitextBox.Text) ||
+                    string.IsNullOrWhiteSpace(osoitetextBox.Text) || string.IsNullOrWhiteSpace(sähköpostitextBox.Text) ||
+                    string.IsNullOrWhiteSpace(salasanatextBox.Text) || string.IsNullOrWhiteSpace(roolicomboBox.Text))
+                    {
+                        MessageBox.Show("Kaikki kentät on täytettävä ennen käyttäjän lisäämistä.");
+                        return;
+                    }
+
+                    if (!TarkistaSalasanaPituus() || // Tarkistetaan, onko salasana riittävän pitkä
+                        !TarkistaSisältääköErikoismerkkejä() || // Tarkistetaan, sisältääkö salasana erikoismerkkejä
+                        !TarkistaSisältääköIsojaJaPieniäKirjaimia() || // Tarkistetaan, sisältääkö salasana isoja ja pieniä kirjaimia
+                        !TarkistaSisältääköNumeroita()) // Tarkistetaan, sisältääkö salasana numeroita
+                    {
+                        return;
+                    }
+
+                    yhteys.Open();
+                    {
+                        // Haetaan nykyinen, suurin käyttäjäID tietokannasta ja luodaan sen perusteella seuraava käyttäjäID
+                        string suurinKäyttäjäID = "SELECT MAX(kayttajaID) FROM kayttaja WHERE rooli = @rooli";
+                        MySqlCommand suurinKäyttäjäIDKomento = new MySqlCommand(suurinKäyttäjäID, yhteys);
+                        suurinKäyttäjäIDKomento.Parameters.AddWithValue("@rooli", roolicomboBox.Text); // Käyttäjät, joilla on sama rooli
+                        MySqlDataReader käyttäjäIDlukija = suurinKäyttäjäIDKomento.ExecuteReader();
+                        if (käyttäjäIDlukija.Read())
+                        {
+                            string suurinID = käyttäjäIDlukija[0].ToString();
+                            käyttäjäIDtextBox.Text = suurinID;
+                        }
+                        käyttäjäIDlukija.Close();
+
+                        // Luodaan seuraava käyttäjäID
+                        string nykyinenKäyttäjäID = käyttäjäIDtextBox.Text;
+                        // Tarkistetaan, alkaako käyttäjäID tekstikenttä "USER" tai "ADMIN"
+                        if (käyttäjäIDtextBox.Text.StartsWith("USER"))
+                        {
+                            usertekstitextBox.Text = roolicomboBox.Text;
+                            userNumerotextBox.Text = nykyinenKäyttäjäID.Substring(nykyinenKäyttäjäID.Length - 8);
+                            int juoksevaNumerointiKäyttäjäID = int.Parse(userNumerotextBox.Text) + 1;
+                            string seuraavaKäyttäjäID = usertekstitextBox.Text + juoksevaNumerointiKäyttäjäID.ToString("D8"); // KäyttäjäID on rooli + juokseva numerointi
+                            uusiKäyttäjäIDtextBox.Text = seuraavaKäyttäjäID;
+                        }
+                        else if (käyttäjäIDtextBox.Text.StartsWith("ADMIN"))
+                        {
+                            admintekstitextBox.Text = roolicomboBox.Text;
+                            adminNumerotextBox.Text = nykyinenKäyttäjäID.Substring(nykyinenKäyttäjäID.Length - 7);
+                            int juoksevaNumerointiKäyttäjäID = int.Parse(adminNumerotextBox.Text) + 1;
+                            string seuraavaKäyttäjäID = admintekstitextBox.Text + juoksevaNumerointiKäyttäjäID.ToString("D7"); // KäyttäjäID on rooli + juokseva numerointi
+                            uusiKäyttäjäIDtextBox.Text = seuraavaKäyttäjäID;
+                        }
+
+                        string lisääKäyttäjä = "INSERT INTO kayttaja (kayttajaID, etunimi, sukunimi, osoite, email, salasana, rooli) VALUES " +
+                        "(@kayttajaID, @etunimi, @sukunimi, @osoite, @email, @salasana, @rooli)";
+                        MySqlCommand lisääKäyttäjäKomento = new MySqlCommand(lisääKäyttäjä, yhteys);
+
+                        // Lisätään parametrien arvot
+                        lisääKäyttäjäKomento.Parameters.AddWithValue("@kayttajaID", uusiKäyttäjäIDtextBox.Text);
+                        lisääKäyttäjäKomento.Parameters.AddWithValue("@etunimi", etunimitextBox.Text);
+                        lisääKäyttäjäKomento.Parameters.AddWithValue("@sukunimi", sukunimitextBox.Text);
+                        lisääKäyttäjäKomento.Parameters.AddWithValue("@osoite", osoitetextBox.Text);
+                        lisääKäyttäjäKomento.Parameters.AddWithValue("@email", sähköpostitextBox.Text);
+                        lisääKäyttäjäKomento.Parameters.AddWithValue("@salasana", salasanatextBox.Text);
+                        lisääKäyttäjäKomento.Parameters.AddWithValue("@rooli", roolicomboBox.Text);
+                        lisääKäyttäjäKomento.ExecuteNonQuery(); // Suoritetaan komento
+                        MessageBox.Show($"Käyttäjä lisätty tietokantaan onnistuneesti (ID: {uusiKäyttäjäIDtextBox.Text})!");
+
+                        string infoLisättyKäyttäjä = $"{DateTime.Now}: Lisäsit uuden käyttäjän järjestelmään ({etunimitextBox.Text} {sukunimitextBox.Text}, " +
+                        $"ID: {uusiKäyttäjäIDtextBox.Text}).{Environment.NewLine}";
+                        LisääKäyttäjäViestiTiedostoon(infoLisättyKäyttäjä);
+                        TyhjennäKentät(); // Tyhjennetään kaikki kentät, kun käyttäjä on luotu
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Virhe käyttäjän lisäämisessä: " + ex.Message);
+            }
+            finally
+            {
+                yhteys.Close();
+            }
+        }
+
+        private bool TarkistaSalasanaPituus() // Metodi, jonka avulla tarkistetaan, onko salasana riittävän pitkä
+        {
+            // Tarkistetaan, että salasanan pituus on vähintään 8 merkkiä, turvallisuussyistä
+            if (salasanatextBox.Text.Length < 8)
+            {
+                MessageBox.Show("Salasanassa on oltava vähintään 8 merkkiä.");
+                return false;
+            }
+            return true;
+        }
+
+        private bool TarkistaSisältääköErikoismerkkejä() // Metodi, jonka avulla tarkistetaan, sisältääkö salasana erikoismerkkejä
+        {
+            string erikoisMerkit = "!@#$%&*";
+            bool sisältääErikoisMerkit = false;
+            foreach (char merkki in salasanatextBox.Text)
+            {
+                if (erikoisMerkit.Contains(merkki))
+                {
+                    return true;
+                }
+            }
+                MessageBox.Show("Salasanassa on oltava vähintään yksi erikoismerkki (!@#$%&*).");
+                return false;
+        }
+
+        private bool TarkistaSisältääköIsojaJaPieniäKirjaimia() // Metodi, jonka avulla tarkistetaan, sisältääkö salasana isoja ja pieniä kirjaimia
+        {
+            bool iso = false, pieni = false;
+            foreach (char merkki in salasanatextBox.Text)
+            {
+                if (char.IsUpper(merkki)) iso = true;
+                else if (char.IsLower(merkki)) pieni = true;
+            }
+
+            if (iso && pieni) return true;
+
+            MessageBox.Show("Salasanassa on oltava sekä isoja että pieniä kirjaimia.");
+            return false;
+        }
+
+        private bool TarkistaSisältääköNumeroita() // Metodi, jonka avulla tarkistetaan, sisältääkö salasana numeroita
+        {
+            foreach (char merkki in salasanatextBox.Text)
+            {
+                if (char.IsDigit(merkki)) return true;
+            }
+            MessageBox.Show("Salasanassa on oltava vähintään yksi numero.");
+            return false;
+        }
+
+        private void LisääKäyttäjäViestiTiedostoon(string lisäys) // Luodaan merkintä tiedostoon käyttäjän lisäyksestä
+        {
+            try
+            {
+                string tiedostoPolku = $"{userID}-toiminnot.txt";
+                if (!File.Exists(tiedostoPolku)) // Tarkistetaan, onko tiedosto olemassa. Jos ei ole, luodaan uusi tyhjä tiedosto
+                {
+                    File.Create(tiedostoPolku).Dispose(); // Luo tyhjä tiedosto, jos sitä ei ole
+                }
+                File.AppendAllLines(tiedostoPolku, new string[] { lisäys }); // Lisätään viesti tiedostoon
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Virhe viestien tallentamisessa: " + ex.Message);
+            }
+        }
+
+        private void TyhjennäKentät() // Tyhjennetään kaikki kentät, kun käyttäjä on luotu
+        {
+            etunimitextBox.Clear();
+            sukunimitextBox.Clear();
+            osoitetextBox.Clear();
+            sähköpostitextBox.Clear();
+            salasanatextBox.Clear();
+            käyttäjäIDtextBox.Clear();
+            uusiKäyttäjäIDtextBox.Clear();
+            usertekstitextBox.Clear();
+            userNumerotextBox.Clear();
+            admintekstitextBox.Clear();
+            adminNumerotextBox.Clear();
+            roolicomboBox.SelectedIndex = -1;
+        }
+    }
+}
