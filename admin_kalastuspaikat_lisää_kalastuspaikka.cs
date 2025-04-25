@@ -123,30 +123,36 @@ namespace KalaKaveri_v1
                                                                                              // Haetaan ensin seuraava paikkaID, jotta voidaan luoda seuraava yksilöity paikkaID
                             }
 
-                            string haettuPaikkaID = "";
-                            int juoksevaNumerointi = 1;
-                            string haepaikkaID = "SELECT MAX(paikkaID) FROM kalastuspaikka WHERE paikkaID LIKE @paikkaIDprefix";
-                            MySqlCommand paikkaIDKysely = new MySqlCommand(haepaikkaID, yhteys);
-                            paikkaIDKysely.Parameters.AddWithValue("@paikkaIDprefix", muokattuKaupunki + "%");
-                            MySqlDataReader paikkaIDLukija = paikkaIDKysely.ExecuteReader();
-                            if (paikkaIDLukija.Read() && paikkaIDLukija[0] != DBNull.Value)
-                            {
-                                haettuPaikkaID = paikkaIDLukija[0].ToString();
-                                paikkaIDtextBox.Text = haettuPaikkaID;
-                            }
-                            paikkaIDLukija.Close();
+                        string haeKaikkiPaikkaIDt = "SELECT paikkaID FROM kalastuspaikka WHERE paikkaID LIKE @paikkaIDprefix ORDER BY paikkaID";
+                        MySqlCommand paikkaIDKysely = new MySqlCommand(haeKaikkiPaikkaIDt, yhteys);
+                        paikkaIDKysely.Parameters.AddWithValue("@paikkaIDprefix", muokattuKaupunki + "%");
+                        MySqlDataReader paikkaIDLukija = paikkaIDKysely.ExecuteReader();
 
-                            // Luodaan juokseva numerointi kaupungille
-                            string nykyinenPaikkaID = paikkaIDtextBox.Text;
-                            if (!string.IsNullOrEmpty(haettuPaikkaID) && haettuPaikkaID.Length >= 10)
-                            {
-                                string numerot = nykyinenPaikkaID.Substring(nykyinenPaikkaID.Length - 3); // Otetaan vain numerot nykyisestä paikkaID:stä
-                                juoksevaNumerointi = int.Parse(numerot) + 1; // Lisätään juokseva numerointi eli lisätään 1 nykyisen paikkaID:n
-                            }
-                            string seuraavaPaikkaID = $"{muokattuKaupunki}{juoksevaNumerointi.ToString("D3")}"; // Muutetaan juokseva numerointi merkkijonoksi
-                            paikkaIDtextBox.Text = seuraavaPaikkaID;
+                        // Listataan kaikki paikkaID:t numeroinnin osalta
+                        List<int> paikkaIDt = new List<int>();
+                        while (paikkaIDLukija.Read())
+                        {
+                            string paikkaID = paikkaIDLukija[0].ToString();
+                            string numerot = paikkaID.Substring(7); // Otetaan vain numerot (7 merkin jälkeen)
+                            paikkaIDt.Add(int.Parse(numerot));
+                        }
+                        paikkaIDLukija.Close();
 
-                            string lisääKalastuspaikka = "INSERT INTO kalastuspaikka (paikkaID, kaupunki, vesistö, kalastusmenetelmä, paikkakuvaus, " +
+                        // Tarkistetaan, löytyykö puuttuva numero
+                        int seuraavaNumero = 1; // Aloitetaan numeroinnilla 1
+                        for (int i = 0; i < paikkaIDt.Count; i++)
+                        {
+                            if (paikkaIDt[i] != seuraavaNumero)
+                            {
+                                break; // Löydettiin puuttuva numero
+                            }
+                            seuraavaNumero++;
+                        }
+
+                        // Luodaan seuraava paikkaID
+                        string seuraavaPaikkaID = muokattuKaupunki + seuraavaNumero.ToString("D3");
+
+                        string lisääKalastuspaikka = "INSERT INTO kalastuspaikka (paikkaID, kaupunki, vesistö, kalastusmenetelmä, paikkakuvaus, " +
                             "koordinaatit, paikkakuva) VALUES (@paikkaID, @kaupunki, @vesistö, @kalastusmenetelmä, @paikkakuvaus, @koordinaatit, @paikkakuva)";
                             MySqlCommand lisääKalastuspaikkaKomento = new MySqlCommand(lisääKalastuspaikka, yhteys);
 

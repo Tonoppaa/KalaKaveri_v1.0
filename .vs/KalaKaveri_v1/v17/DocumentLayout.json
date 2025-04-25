@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|c:\\users\\tonoppa\\desktop\\ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\n\u00E4ytt\u00F6tutkinnot\\oppilaitosn\u00E4ytt\u00F6\\kalakaveri_v1\\admin_kalapankki_muokkaa_muokkaakala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|solutionrelative:admin_kalapankki_muokkaa_muokkaakala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|c:\\users\\tonoppa\\desktop\\ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\n\u00E4ytt\u00F6tutkinnot\\oppilaitosn\u00E4ytt\u00F6\\kalakaveri_v1\\kayttaja_unohtunutsalasana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|solutionrelative:kayttaja_unohtunutsalasana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\admin_kalapankki_muokkaa_muokkaakala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|solutionrelative:admin_kalapankki_muokkaa_muokkaakala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|c:\\users\\tonoppa\\desktop\\ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\n\u00E4ytt\u00F6tutkinnot\\oppilaitosn\u00E4ytt\u00F6\\kalakaveri_v1\\kayttaja_unohtunutsalasana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|solutionrelative:kayttaja_unohtunutsalasana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|c:\\users\\tonoppa\\desktop\\ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\n\u00E4ytt\u00F6tutkinnot\\oppilaitosn\u00E4ytt\u00F6\\kalakaveri_v1\\admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|solutionrelative:admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A293FA24-4CB1-4984-BC79-457B37F2FA58}|KalaKaveri_v1.csproj|solutionrelative:admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +31,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "admin_kalapankki_muokkaa_muokkaakala.cs",
-              "DocumentMoniker": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\admin_kalapankki_muokkaa_muokkaakala.cs",
-              "RelativeDocumentMoniker": "admin_kalapankki_muokkaa_muokkaakala.cs",
-              "ToolTip": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\admin_kalapankki_muokkaa_muokkaakala.cs",
-              "RelativeToolTip": "admin_kalapankki_muokkaa_muokkaakala.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Title": "kayttaja_unohtunutsalasana.cs",
+              "DocumentMoniker": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\kayttaja_unohtunutsalasana.cs",
+              "RelativeDocumentMoniker": "kayttaja_unohtunutsalasana.cs",
+              "ToolTip": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\kayttaja_unohtunutsalasana.cs",
+              "RelativeToolTip": "kayttaja_unohtunutsalasana.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwFkAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T08:20:15.128Z",
+              "WhenOpened": "2025-04-25T08:56:11.087Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "admin_kalapankki_muokkaa_muokkaakala.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\admin_kalapankki_muokkaa_muokkaakala.cs",
-              "RelativeDocumentMoniker": "admin_kalapankki_muokkaa_muokkaakala.cs",
-              "ToolTip": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\admin_kalapankki_muokkaa_muokkaakala.cs [Design]",
-              "RelativeToolTip": "admin_kalapankki_muokkaa_muokkaakala.cs [Design]",
+              "Title": "kayttaja_unohtunutsalasana.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\kayttaja_unohtunutsalasana.cs",
+              "RelativeDocumentMoniker": "kayttaja_unohtunutsalasana.cs",
+              "ToolTip": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\kayttaja_unohtunutsalasana.cs [Design]",
+              "RelativeToolTip": "kayttaja_unohtunutsalasana.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T08:20:02.11Z"
+              "WhenOpened": "2025-04-25T08:55:59.101Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs",
+              "DocumentMoniker": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs",
+              "RelativeDocumentMoniker": "admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs",
+              "ToolTip": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs",
+              "RelativeToolTip": "admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T08:39:46.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs",
+              "RelativeDocumentMoniker": "admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs",
+              "ToolTip": "C:\\Users\\Tonoppa\\Desktop\\Ohjelmistokehitt\u00E4j\u00E4 koulun tiedostoja\\N\u00E4ytt\u00F6tutkinnot\\Oppilaitosn\u00E4ytt\u00F6\\KalaKaveri_v1\\admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs [Design]",
+              "RelativeToolTip": "admin_k\u00E4ytt\u00E4j\u00E4hallinta_lis\u00E4\u00E4_k\u00E4ytt\u00E4j\u00E4.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T08:39:42.013Z"
             }
           ]
         }

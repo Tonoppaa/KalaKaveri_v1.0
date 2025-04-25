@@ -234,3 +234,67 @@
 
 14.4.2025 23.49.39: Lisäsit uuden käyttäjän järjestelmään (Master Miller, ID: ADMIN0000002).
 
+22.4.2025 14.32.32: Poistit kalapankin kalan (Kirjolohi) tietokannasta.
+
+22.4.2025 14.34.16: Lisäsit uuden kalalajin järjestelmään (Kirjolohi, ID: KALA000021).
+
+22.4.2025 14.43.26: Poistit kalapankin kalan (Kirjolohi) tietokannasta.
+
+22.4.2025 14.44.32: Lisäsit uuden kalalajin järjestelmään (Kirjolohi, ID: KALA000006).
+
+22.4.2025 14.48.47: Lisäsit uuden kalalajin järjestelmään (Ankerias, ID: KALA000021).
+
+22.4.2025 14.55.11: Poistit kalastuspaikan (Tampere - Peltolammi, ID: TAMPERE009) tietokannasta.
+
+22.4.2025 14.56.21: Lisäsit uuden kalastuspaikan (Tampere - Peltolammi, ID: ) .
+
+22.4.2025 14.56.44: Poistit kalastuspaikan (Tampere - Peltolammi, ID: ) tietokannasta.
+
+22.4.2025 15.07.28: Lisäsit uuden kalastuspaikan (Tampere - Peltolammi, ID: TAMPERE009) .
+
+22.4.2025 15.08.12: Lisäsit uuden kalastuspaikan (Tampere - Pieni lutakko, ID: TAMPERE011) .
+
+22.4.2025 15.08.28: Poistit kalastuspaikan (Tampere - Vaakkolammi, ID: TAMPERE010) tietokannasta.
+
+22.4.2025 15.08.35: Poistit kalastuspaikan (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) tietokannasta.
+
+22.4.2025 15.09.03: Lisäsit uuden kalastuspaikan (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) .
+
+22.4.2025 15.09.17: Poistit kalastuspaikan (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) tietokannasta.
+
+22.4.2025 15.17.10: Poistit käyttäjän (Boris Jeltsin, ID: USER00000008) tietokannasta.
+
+22.4.2025 15.17.44: Lisäsit uuden käyttäjän järjestelmään (Boris Jeltsin, ID: ).
+
+22.4.2025 15.18.01: Poistit käyttäjän (Boris Jeltsin, ID: ) tietokannasta.
+
+22.4.2025 15.20.15: Lisäsit uuden käyttäjän järjestelmään (Boris Jeltsin, ID: USER00000008).
+
+22.4.2025 15.20.26: Lisäsit uuden käyttäjän järjestelmään (dsaddsdds dsdsds, ID: USER00000010).
+
+22.4.2025 15.20.42: Poistit käyttäjän (dsaddsdds dsdsds, ID: USER00000010) tietokannasta.
+
+22.4.2025 15.44.19: Lisäsit uuden kalalajin järjestelmään (Räkäkiiski, ID: KALA000022).
+
+22.4.2025 15.44.51: Päivitit kalapankin kalan (Räkäkiiski) tietoja.
+
+22.4.2025 15.45.30: Poistit kalapankin kalan (Räkäkiiski) tietokannasta.
+
+22.4.2025 15.46.36: Lisäsit uuden kalastuspaikan (Hämeenlinna - Ahvenistonjärvi, ID: HÄMEENL001) .
+
+22.4.2025 15.48.30: Lisäsit uuden kalastuspaikan (Kristiinankaupunki - Tekojärvi, ID: KRISTII001) .
+
+22.4.2025 15.49.29: Poistit kalastuspaikan (Kristiinankaupunki - Tekojärvi, ID: KRISTII001) tietokannasta.
+
+22.4.2025 15.52.13: Päivitit käyttäjän (Tavallinen Tallaaja, ID: USER00000009) tietoja.
+
+22.4.2025 15.54.45: Poistit käyttäjän (Tavallinen Tallaaja, ID: USER00000009) tietokannasta.
+
+22.4.2025 15.55.31: Lisäsit uuden käyttäjän järjestelmään (Huippu Tallaaja, ID: USER00000009).
+
+25.4.2025 11.49.38: Poistit käyttäjän (Tommi Testaaja, ID: USER00000007) tietokannasta.
+
+25.4.2025 11.50.19: Lisäsit uuden käyttäjän järjestelmään (Mami Torttila, ID: USER00000007).
+
+25.4.2025 11.50.47: Lisäsit uuden käyttäjän järjestelmään (Mauno Majava, ID: USER00000010).
+

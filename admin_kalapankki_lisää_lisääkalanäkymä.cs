@@ -51,25 +51,39 @@ namespace KalaKaveri_v1
                 {
                     yhteys.Open();
                     {
-                        // Haetaan ensin seuraava kalaID, jotta voidaan luoda seuraava yksilöity kalaID
-                        string haekalaID = "SELECT MAX(kalaID) FROM kalalaji";
-                        MySqlCommand kalaIDKysely = new MySqlCommand(haekalaID, yhteys);
+                        // Haetaan kaikki olemassa olevat kalaID:t
+                        string haeKaikkiKalaIDt = "SELECT kalaID FROM kalalaji ORDER BY kalaID";
+                        MySqlCommand kalaIDKysely = new MySqlCommand(haeKaikkiKalaIDt, yhteys);
                         MySqlDataReader kalaIDLukija = kalaIDKysely.ExecuteReader();
-                        if (kalaIDLukija.Read())
+
+                        // Listataan kaikki kalaID:t numeroinnin osalta
+                        List<int> kalaIDt = new List<int>();
+                        while (kalaIDLukija.Read())
                         {
-                            string haettuSaalisID = kalaIDLukija[0].ToString();
-                            kalaIDtextBox.Text = haettuSaalisID;
+                            string kalaID = kalaIDLukija[0].ToString();
+                            string numerot = kalaID.Substring(4); // Otetaan vain numerot kalaID:stä
+                            kalaIDt.Add(int.Parse(numerot));
                         }
                         kalaIDLukija.Close();
 
+                        // Tarkistetaan, löytyykö puuttuva numero
+                        int seuraavaNumero = 1; // Aloitetaan 1:stä
+                        for (int i = 0; i < kalaIDt.Count; i++)
+                        {
+                            if (kalaIDt[i] != seuraavaNumero)
+                            {
+                                break; // Löydettiin puuttuva numero
+                            }
+                            seuraavaNumero++;
+                        }
+
+                        // Luodaan seuraava kalaID
+                        string seuraavaKalaID = "KALA" + seuraavaNumero.ToString("D6");
+
                         // Kirjataan kalalaji tietokantaan parametrisoidulla toiminnolla
                         string lisääKalalaji = "INSERT INTO kalalaji (kalaID, kalanimi, tyypillinenkoko, tyypillinenpaino, alamitta, elinympäristö, kalakuva, kalakuvaus) " +
-                        "VALUES (@kalaID, @kalanimi, @tyypillinenkoko, @tyypillinenpaino, @alamitta, @elinympäristö, @kalakuva, @kalakuvaus)";
+                                                "VALUES (@kalaID, @kalanimi, @tyypillinenkoko, @tyypillinenpaino, @alamitta, @elinympäristö, @kalakuva, @kalakuvaus)";
                         MySqlCommand lisääKalalajiKysely = new MySqlCommand(lisääKalalaji, yhteys);
-                        string nykyinenKalaID = kalaIDtextBox.Text;
-                        string numerot = nykyinenKalaID.Substring(4); // Otetaan vain numerot nykyisestä kalaID:stä
-                        int juoksevaNumerointi = int.Parse(numerot) + 1; // Lisätään juokseva numerointi eli lisätään 1 nykyisen kalaID:n
-                        string seuraavaKalaID = "KALA" + juoksevaNumerointi.ToString("D6"); // Muutetaan juokseva numerointi merkkijonoksi
 
                         // Lisätään parametrien arvot
                         lisääKalalajiKysely.Parameters.AddWithValue("@kalaID", seuraavaKalaID);
@@ -81,7 +95,9 @@ namespace KalaKaveri_v1
                         lisääKalalajiKysely.Parameters.AddWithValue("@kalakuvaus", kalakuvausrichTextBox.Text);
                         lisääKalalajiKysely.Parameters.AddWithValue("@kalakuva", imgurUrltextBox.Text);
                         lisääKalalajiKysely.ExecuteNonQuery();
+
                         MessageBox.Show("Uusi kalalaji lisätty järjestelmään onnistuneesti!");
+
                         string infoLisättyKalalaji = $"{DateTime.Now}: Lisäsit uuden kalalajin järjestelmään ({kalanimitextBox.Text}, ID: {seuraavaKalaID}).{Environment.NewLine}";
                         LisääKalalajiViestiTiedostoon(infoLisättyKalalaji);
                         TyhjennäKentät(); // Tyhjennetään kentät kalalajin lisäyksen jälkeen

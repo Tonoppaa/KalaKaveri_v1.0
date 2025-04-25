@@ -66,3 +66,4 @@ C:\Users\Tonoppa\Desktop\Ohjelmistokehittäjä koulun tiedostoja\Näyttötutkinn
 C:\Users\Tonoppa\Desktop\Ohjelmistokehittäjä koulun tiedostoja\Näyttötutkinnot\Oppilaitosnäyttö\KalaKaveri_v1\obj\Debug\net8.0-windows\KalaKaveri_v1.admin_käyttäjähallinta_muokkaa_käyttäjä.resources
 C:\Users\Tonoppa\Desktop\Ohjelmistokehittäjä koulun tiedostoja\Näyttötutkinnot\Oppilaitosnäyttö\KalaKaveri_v1\obj\Debug\net8.0-windows\KalaKaveri_v1.admin_käyttäjähallinta_lisää_käyttäjä.resources
 C:\Users\Tonoppa\Desktop\Ohjelmistokehittäjä koulun tiedostoja\Näyttötutkinnot\Oppilaitosnäyttö\KalaKaveri_v1\obj\Debug\net8.0-windows\KalaKaveri_v1.admin_käyttäjähallinta_muokkaa_muokkaakäyttäjä.resources
+C:\Users\Tonoppa\Desktop\Ohjelmistokehittäjä koulun tiedostoja\Näyttötutkinnot\Oppilaitosnäyttö\KalaKaveri_v1\obj\Debug\net8.0-windows\KalaKaveri_v1.sourcelink.json

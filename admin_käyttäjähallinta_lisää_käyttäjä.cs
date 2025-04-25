@@ -124,37 +124,55 @@ namespace KalaKaveri_v1
 
                     yhteys.Open();
                     {
-                        // Haetaan nykyinen, suurin käyttäjäID tietokannasta ja luodaan sen perusteella seuraava käyttäjäID
-                        string suurinKäyttäjäID = "SELECT MAX(kayttajaID) FROM kayttaja WHERE rooli = @rooli";
-                        MySqlCommand suurinKäyttäjäIDKomento = new MySqlCommand(suurinKäyttäjäID, yhteys);
-                        suurinKäyttäjäIDKomento.Parameters.AddWithValue("@rooli", roolicomboBox.Text); // Käyttäjät, joilla on sama rooli
-                        MySqlDataReader käyttäjäIDlukija = suurinKäyttäjäIDKomento.ExecuteReader();
-                        if (käyttäjäIDlukija.Read())
+                        // Haetaan kaikki käyttäjäID:t, jotka vastaavat roolia (USER tai ADMIN)
+                        string haeKaikkiKäyttäjäIDt = "SELECT kayttajaID FROM kayttaja WHERE rooli = @rooli ORDER BY kayttajaID";
+                        MySqlCommand käyttäjäIDKysely = new MySqlCommand(haeKaikkiKäyttäjäIDt, yhteys);
+                        käyttäjäIDKysely.Parameters.AddWithValue("@rooli", roolicomboBox.Text);
+                        MySqlDataReader käyttäjäIDlukija = käyttäjäIDKysely.ExecuteReader();
+
+                        // Listataan kaikki käyttäjäID:t ja puretaan numerot
+                        List<int> käyttäjäIDt = new List<int>();
+                        while (käyttäjäIDlukija.Read())
                         {
-                            string suurinID = käyttäjäIDlukija[0].ToString();
-                            käyttäjäIDtextBox.Text = suurinID;
+                            string käyttäjäID = käyttäjäIDlukija[0].ToString();
+                            string numerot = käyttäjäID.Substring(roolicomboBox.Text.Length);
+                            käyttäjäIDt.Add(int.Parse(numerot));
                         }
                         käyttäjäIDlukija.Close();
 
-                        // Luodaan seuraava käyttäjäID
-                        string nykyinenKäyttäjäID = käyttäjäIDtextBox.Text;
-                        // Tarkistetaan, alkaako käyttäjäID tekstikenttä "USER" tai "ADMIN"
-                        if (käyttäjäIDtextBox.Text.StartsWith("USER"))
+                        // Tarkistetaan, löytyykö puuttuva numero
+                        int seuraavaNumero = 1; // Aloitetaan numerointi 1:stä
+                        for (int i = 0; i < käyttäjäIDt.Count; i++)
                         {
-                            usertekstitextBox.Text = roolicomboBox.Text;
-                            userNumerotextBox.Text = nykyinenKäyttäjäID.Substring(nykyinenKäyttäjäID.Length - 8);
-                            int juoksevaNumerointiKäyttäjäID = int.Parse(userNumerotextBox.Text) + 1;
-                            string seuraavaKäyttäjäID = usertekstitextBox.Text + juoksevaNumerointiKäyttäjäID.ToString("D8"); // KäyttäjäID on rooli + juokseva numerointi
-                            uusiKäyttäjäIDtextBox.Text = seuraavaKäyttäjäID;
+                            if (käyttäjäIDt[i] != seuraavaNumero)
+                            {
+                                // Löydettiin aukko (puuttuva numero)
+                                break; // Ei tarvitse tarkistaa enempää, koska ensimmäinen aukko löytyy
+                            }
+                            seuraavaNumero++;
                         }
-                        else if (käyttäjäIDtextBox.Text.StartsWith("ADMIN"))
+
+                        // Jos aukko löytyi, luodaan puuttuva käyttäjäID
+                        string seuraavaKäyttäjäID = "";
+                        if (seuraavaNumero <= käyttäjäIDt.Count)
                         {
-                            admintekstitextBox.Text = roolicomboBox.Text;
-                            adminNumerotextBox.Text = nykyinenKäyttäjäID.Substring(nykyinenKäyttäjäID.Length - 7);
-                            int juoksevaNumerointiKäyttäjäID = int.Parse(adminNumerotextBox.Text) + 1;
-                            string seuraavaKäyttäjäID = admintekstitextBox.Text + juoksevaNumerointiKäyttäjäID.ToString("D7"); // KäyttäjäID on rooli + juokseva numerointi
-                            uusiKäyttäjäIDtextBox.Text = seuraavaKäyttäjäID;
+                            // Jos aukko löytyi, täytetään puuttuva ID
+                            seuraavaKäyttäjäID = roolicomboBox.Text + seuraavaNumero.ToString("D8");
                         }
+                        else
+                        {
+                            // Jos aukkoa ei löytynyt, jatketaan juoksevaa numerointia
+                            if (roolicomboBox.Text == "USER")
+                            {
+                                seuraavaKäyttäjäID = "USER" + seuraavaNumero.ToString("D8");
+                            }
+                            else if (roolicomboBox.Text == "ADMIN")
+                            {
+                                seuraavaKäyttäjäID = "ADMIN" + seuraavaNumero.ToString("D7");
+                            }
+                        }
+
+                        uusiKäyttäjäIDtextBox.Text = seuraavaKäyttäjäID;
 
                         string lisääKäyttäjä = "INSERT INTO kayttaja (kayttajaID, etunimi, sukunimi, osoite, email, salasana, rooli) VALUES " +
                         "(@kayttajaID, @etunimi, @sukunimi, @osoite, @email, @salasana, @rooli)";
@@ -174,6 +192,7 @@ namespace KalaKaveri_v1
                         string infoLisättyKäyttäjä = $"{DateTime.Now}: Lisäsit uuden käyttäjän järjestelmään ({etunimitextBox.Text} {sukunimitextBox.Text}, " +
                         $"ID: {uusiKäyttäjäIDtextBox.Text}).{Environment.NewLine}";
                         LisääKäyttäjäViestiTiedostoon(infoLisättyKäyttäjä);
+                        TyhjennäTapahtumatTiedostosta(); // Tyhjennetään tiedosto, jos se on jo olemassa
                         TyhjennäKentät(); // Tyhjennetään kaikki kentät, kun käyttäjä on luotu
                     }
                 }
@@ -253,6 +272,22 @@ namespace KalaKaveri_v1
             catch (Exception ex)
             {
                 MessageBox.Show("Virhe viestien tallentamisessa: " + ex.Message);
+            }
+        }
+
+        private void TyhjennäTapahtumatTiedostosta() // Tyhjennetään tiedosto, johon käyttäjän toiminnot tallennetaan; juuri luodulla käyttäjällä ei pitäisi olla tapahtumia
+        {
+            try
+            {
+                string luotuKäyttäjäTiedosto = $"{uusiKäyttäjäIDtextBox.Text}-toiminnot.txt";
+                if (File.Exists(luotuKäyttäjäTiedosto))
+                {
+                    File.WriteAllText(luotuKäyttäjäTiedosto, string.Empty); // Tyhjennetään tiedosto, jos se on olemassa
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Virhe tiedoston tyhjentämisessä: " + ex.Message);
             }
         }
 

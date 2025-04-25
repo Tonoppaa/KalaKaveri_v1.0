@@ -38,6 +38,14 @@ namespace KalaKaveri_v1
                         return;
                     }
 
+                    if (!TarkistaSalasanaPituus() || // Tarkistetaan, onko salasana riittävän pitkä
+                    !TarkistaSisältääköErikoismerkkejä() || // Tarkistetaan, sisältääkö salasana erikoismerkkejä
+                    !TarkistaSisältääköIsojaJaPieniäKirjaimia() || // Tarkistetaan, sisältääkö salasana isoja ja pieniä kirjaimia
+                    !TarkistaSisältääköNumeroita()) // Tarkistetaan, sisältääkö salasana numeroita
+                    {
+                        return;
+                    }
+
                     yhteys.Open();
                     {
                         // Hae viimeisin käyttäjäID
@@ -112,6 +120,8 @@ namespace KalaKaveri_v1
 
                         MessageBox.Show("Tämä ikkuna suljetaan.");
                         this.Close();
+                        kirjaudu kirjauduForm = new kirjaudu();
+                        kirjauduForm.Show(); // Näytetään kirjautumisikkuna
                     }
                 }
                 catch (Exception ex)
@@ -123,6 +133,57 @@ namespace KalaKaveri_v1
                     yhteys.Close(); // Suljetaan tietokantayhteys
                 }
             }
+        }
+
+        private bool TarkistaSalasanaPituus() // Metodi, jonka avulla tarkistetaan, onko salasana riittävän pitkä
+        {
+            // Tarkistetaan, että salasanan pituus on vähintään 8 merkkiä, turvallisuussyistä
+            if (salasanatextBox.Text.Length < 8)
+            {
+                MessageBox.Show("Salasanassa on oltava vähintään 8 merkkiä.");
+                return false;
+            }
+            return true;
+        }
+
+        private bool TarkistaSisältääköErikoismerkkejä() // Metodi, jonka avulla tarkistetaan, sisältääkö salasana erikoismerkkejä
+        {
+            string erikoisMerkit = "!@#$%&*";
+            bool sisältääErikoisMerkit = false;
+            foreach (char merkki in salasanatextBox.Text)
+            {
+                if (erikoisMerkit.Contains(merkki))
+                {
+                    return true;
+                }
+            }
+            MessageBox.Show("Salasanassa on oltava vähintään yksi erikoismerkki (!@#$%&*).");
+            return false;
+        }
+
+        private bool TarkistaSisältääköIsojaJaPieniäKirjaimia() // Metodi, jonka avulla tarkistetaan, sisältääkö salasana isoja ja pieniä kirjaimia
+        {
+            bool iso = false, pieni = false;
+            foreach (char merkki in salasanatextBox.Text)
+            {
+                if (char.IsUpper(merkki)) iso = true;
+                else if (char.IsLower(merkki)) pieni = true;
+            }
+
+            if (iso && pieni) return true;
+
+            MessageBox.Show("Salasanassa on oltava sekä isoja että pieniä kirjaimia.");
+            return false;
+        }
+
+        private bool TarkistaSisältääköNumeroita() // Metodi, jonka avulla tarkistetaan, sisältääkö salasana numeroita
+        {
+            foreach (char merkki in salasanatextBox.Text)
+            {
+                if (char.IsDigit(merkki)) return true;
+            }
+            MessageBox.Show("Salasanassa on oltava vähintään yksi numero.");
+            return false;
         }
 
         private void näytäSalasanaButton_MouseDown(object sender, EventArgs e) // Näytä salasana, kun nappia pidetään pohjassa

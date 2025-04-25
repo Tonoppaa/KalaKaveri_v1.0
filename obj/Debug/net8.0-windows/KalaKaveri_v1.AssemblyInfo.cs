@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KalaKaveri_v1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1214ef533876d04d59160b8755a38cb4ef9def2c")]
 [assembly: System.Reflection.AssemblyProductAttribute("KalaKaveri_v1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KalaKaveri_v1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -86,6 +86,8 @@ namespace KalaKaveri_v1
                     salasanaLukija.Close();
                 }
                 this.Close(); // Suljetaan tämä ikkuna
+                kirjaudu kirjaudu = new kirjaudu(); // Luodaan uusi kirjaudu-ikkuna
+                kirjaudu.Show(); // Näytetään kirjautumissivu
             }
             catch (Exception ex)
             {
