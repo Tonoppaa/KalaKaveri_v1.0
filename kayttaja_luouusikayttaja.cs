@@ -225,6 +225,8 @@ namespace KalaKaveri_v1
         private void suljeNappi_Click(object sender, EventArgs e) // Sulje tämä ikkuna
         {
             this.Close();
+            kirjaudu kirjaudu = new kirjaudu();
+            kirjaudu.Show(); // Näytetään kirjautumisikkuna
         }
     }
 }

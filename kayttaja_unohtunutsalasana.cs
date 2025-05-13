@@ -28,6 +28,8 @@ namespace KalaKaveri_v1
         private void suljeNappi_Click(object sender, EventArgs e) // Sulje tämä form
         {
             this.Close();
+            kirjaudu kirjaudu = new kirjaudu();
+            kirjaudu.Show();
         }
 
         private void lähetäNappi_Click(object sender, EventArgs e) // Nappia painamalla lähetetään viesti käyttäjän sähköpostiin, joka sisältää käyttäjän salasanan
